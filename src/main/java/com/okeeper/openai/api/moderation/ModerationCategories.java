@@ -1,0 +1,32 @@
+package com.okeeper.openai.api.moderation;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.okeeper.openai.api.completion.CompletionChoice;
+import lombok.Data;
+
+/**
+ * An object containing the flags for each moderation category
+ *
+ * https://beta.openai.com/docs/api-reference/moderations/create
+ */
+@Data
+public class ModerationCategories {
+
+    public boolean hate;
+
+    @JsonProperty("hate/threatening")
+    public boolean hateThreatening;
+
+    @JsonProperty("self-harm")
+    public boolean selfHarm;
+
+    public boolean sexual;
+
+    @JsonProperty("sexual/minors")
+    public boolean sexualMinors;
+
+    public boolean violence;
+
+    @JsonProperty("violence/graphic")
+    public boolean violenceGraphic;
+}
